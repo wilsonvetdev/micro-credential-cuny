@@ -1,0 +1,1 @@
+document.write('This line was printed from a JavaScript source file.')
