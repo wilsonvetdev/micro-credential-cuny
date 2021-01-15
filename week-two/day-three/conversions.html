@@ -1,0 +1,69 @@
+<!-- Conversions -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<head>
+    <title>Conversions</title>
+</head>
+
+<body>
+
+    <h2>This program will change metric to standard.</h2>
+
+    <TABLE cellSpacing=0 cellPadding=0 width=250>
+
+        <FORM name=cminch>
+            <TBODY>
+                <TR>
+                    <TD>
+                        <INPUT onblur=cmconvert() value="Enter Number" name=cm> cm
+                    </TD>
+                <TR>
+                <TR>
+                    <TD>
+                        <INPUT onblur=feetconvert() value=0 name=feet> feet
+                    </TD>
+                </TR>
+                <TR>
+                    <TD>
+                        <INPUT onblur=inchconvert() value=1 name=inch> inch
+                    </TD>
+                </TR>
+            </TBODY>
+        </FORM>
+
+    </TABLE>
+
+        <p>
+            Note: 1 Inch = 2.54 cm, 1 Feet = 30.48 cm, 1 Feet = 12 Inch
+        </p>
+
+        <BR>
+
+        <SCRIPT language=JavaScript>
+            let inch = document.getElementsByName('inch')[0]
+            let cm = document.getElementsByName('cm')[0]
+            let feet = document.getElementsByName('feet')[0]
+
+            function roundit(which) {
+                return Math.round(which * 100) / 100
+            }
+
+            function cmconvert() {
+                feet.value = roundit(cm.value / 30.84);
+                inch.value = roundit(cm.value / 2.54);
+            }
+
+            function inchconvert() {
+                cm.value = roundit(inch.value * 2.54);
+                feet.value = roundit(inch.value / 12);
+            }
+
+            function feetconvert() {
+                cm.value = roundit(feet.value * 30.48)
+                inch.value = roundit(feet.value * 12);
+            }
+        </SCRIPT>
+
+</body>
+<html>
