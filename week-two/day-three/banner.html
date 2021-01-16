@@ -6,7 +6,7 @@
     <title>Banner</title>
 </head>
 
-<body onload="setInterval('changeAd()', 1000);">  
+<body onload="run=setInterval('changeAd()', 1000);">  
 
     <!-- onload="run = setInterval('changeAd()', 1000) -->
 
@@ -16,12 +16,12 @@
 
     <script type="text/javascript">
 
-        // let run; --unnecessary variable?
+        let run
+
+        let curImage = 1
 
         // just had to add images and change their name to match the source
         function changeAd() { 
-
-            let curImage = 1 //moved this inside to become function scoped
 
             switch (curImage) {
                 case 1:

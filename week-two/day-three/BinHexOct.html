@@ -22,14 +22,14 @@
 
             let x = document.getElementById("deci").value;
 
-            if ((/[^0-9]/g.test(x)) || x == "") {
+            if ((/[^0-9]/g.test(x)) || x == "") { //  || = OR 
                 alert("You must enter an integer decimal number!");
                 document.getElementById("deci").value = "";
                 document.getElementById("deci").focus();
                 return false;
             }
 
-            x = parseInt(x);
+            x = parseInt(x);  // "10"  ----- 10
 
             let bin = x.toString(2);
             let hex = x.toString(16).toUpperCase();
