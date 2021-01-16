@@ -18,10 +18,11 @@
 
         // let run; --unnecessary variable?
 
-        let curImage = 1;
-
         // just had to add images and change their name to match the source
         function changeAd() { 
+
+            let curImage = 1 //moved this inside to become function scoped
+
             switch (curImage) {
                 case 1:
                     document.images[0].src = "adImage2.jpg";
