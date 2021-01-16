@@ -10,35 +10,36 @@
 
     <h2>This program will change metric to standard.</h2>
 
-    <TABLE cellSpacing=0 cellPadding=0 width=250>
+    <table cellSpacing=0 cellPadding=0 width=250>
 
-        <FORM name=cminch>
-            <TBODY>
-                <TR>
-                    <TD>
-                        <INPUT onblur=cmconvert() value="Enter Number" name=cm> cm
-                    </TD>
-                <TR>
-                <TR>
-                    <TD>
-                        <INPUT onblur=feetconvert() value=0 name=feet> feet
-                    </TD>
-                </TR>
-                <TR>
-                    <TD>
-                        <INPUT onblur=inchconvert() value=1 name=inch> inch
-                    </TD>
-                </TR>
-            </TBODY>
-        </FORM>
+        <form name=cminch>
+            <tbody>
+                <tr>
+                    <td>
+                        <input onblur=cmconvert() value="Enter Number" name=cm> cm
+                    </td>
+                <tr>
+                <tr>
+                    <td> 
+                        <!-- td tag was missing -->
+                        <input onblur=feetconvert() value=0 name=feet> feet
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input onblur=inchconvert() value=1 name=inch> inch
+                    </td>
+                </tr>
+            </tbody>
+        </form>
 
-    </TABLE>
+    </table>
 
         <p>
             Note: 1 Inch = 2.54 cm, 1 Feet = 30.48 cm, 1 Feet = 12 Inch
         </p>
 
-        <BR>
+        <br>
 
         <script language=JavaScript>
 
