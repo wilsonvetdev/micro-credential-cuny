@@ -1,0 +1,73 @@
+<!-- Current Digital Time -->
+
+<!DOCTYPE html>
+
+<head>
+    <title>Current Digital Time</title>
+    <style type="text/css">
+        body {
+            text-align: center;
+        }
+
+        div.clock {
+            font-family: 'Orbitron', sans-serif;
+            background: black;
+            color: #66ff99;
+            font-size: 56px;
+            text-align: center;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body onload="currentTime()">
+
+    <div>
+        <h1>Current Time</h1>
+    </div>
+
+    <div class="clock">
+    </div>
+
+
+    <script language="JavaScript">
+        function currentTime() {
+
+            let date = new Date(); /* creating object of Date class */
+            let hour = date.getHours();
+            let min = date.getMinutes();
+            let sec = date.getSeconds();
+
+            let midday = ('AM')
+
+            midday = (hour >= 12) ? "PM" : "AM"
+
+            hour = updateTime(hour);
+            min = updateTime(min);
+            sec = updateTime(sec);
+
+            hour = (hour == 0) ? 12 : ((hour > 12) ? (hour - 12) : hour);
+
+            document.querySelector('div.clock').innerText = `${hour} : ${min} : ${sec} ${midday}`
+
+            let t = setTimeout(function () {
+                currentTime()
+            }, 1000); /* setting timer */
+
+        }
+
+        function updateTime(k) {
+            if (k < 10) {
+                return "0" + k;
+            } else {
+                return k;
+            }
+        }
+
+        currentTime(); /* calling currentTime() function to initiate the process */
+    </script>
+
+</body>
+
+</html>
