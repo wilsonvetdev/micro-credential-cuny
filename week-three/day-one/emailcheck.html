@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        <form name='emailForm' id="emailForm">
+            <label for='email'>Email</label> 
+            <br>
+            <input type='text' id='email' name='email'> 
+            <br>
+            <br>
+            <input type='submit' value='Check E-mail Address'>
+        </form>
+        
+        <script>
+
+            let form = document.querySelector('form#emailForm')
+
+            form.addEventListener('submit', (event) => {
+                event.preventDefault()
+                let formValue = form['email'].value
+                if(!!formValue.indexOf('@')) {
+                    alert('this is not a valid email')
+                }
+                form.reset()
+            })
+
+        </script>
+
+    </body>
+</html>
