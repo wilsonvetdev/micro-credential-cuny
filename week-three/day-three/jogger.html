@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Jogger</title>
+</head>
+
+<body>
+
+    <P><IMG SRC="Images/runner0.jpg" NAME="runner"></P>
+    <form>
+        <INPUT TYPE="button" NAME="turn" VALUE=" Turn " onClick="startTurning()">
+        <INPUT TYPE="button" NAME="stop" VALUE=" Stop " onClick="clearInterval(begin)">
+    </form>
+
+    <SCRIPT LANGUAGE="JavaScript">
+
+        let runnerArray = []
+        let curRunner = 0
+        let begin
+
+        runnerArray[0] = new Image();
+        runnerArray[0].src = "Images/runner0.jpg";
+        runnerArray[1] = new Image();
+        runnerArray[1].src = "Images/runner1.jpg";
+        runnerArray[2] = new Image();
+        runnerArray[2].src = "Images/runner2.jpg";
+        runnerArray[3] = new Image();
+        runnerArray[3].src = "Images/runner3.jpg";
+        runnerArray[4] = new Image();
+        runnerArray[4].src = "Images/runner4.jpg";
+        runnerArray[5] = new Image();
+        runnerArray[5].src = "Images/runner5.jpg";
+
+        function turn() {
+            if (curRunner == 5)
+                curRunner = 0;
+            else
+                ++curRunner;
+            document.runner.src = runnerArray[curRunner].src;
+        }
+
+        function startTurning() {
+            if (begin)
+                clearInterval(begin);
+            begin = setInterval("turn()", 400);
+        }
+
+    </script>
+
+</body>
+
+</html>
