@@ -1,0 +1,48 @@
+<!-- Traffic Signal -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<head>
+    <title>TrafficSignal</title>
+</head>
+
+<body>
+
+    <P><IMG SRC="Images/red.gif" NAME="stoplight"></P>
+    <FORM>
+        <INPUT TYPE="button" NAME="cycle" VALUE=" Cycle " onClick="startCycling()">
+        <INPUT TYPE="button" NAME="stop" VALUE=" Stop " onClick="clearInterval(begin)">
+    </FORM>
+
+    <script language="JavaScript">
+
+        let stoplightArray = []
+        let curStoplight = 0
+        let begin
+
+        stoplightArray[0] = new Image()
+        stoplightArray[0].src = "Images/red.gif"
+        stoplightArray[1] = new Image()
+        stoplightArray[1].src = "Images/yellow.gif"
+        stoplightArray[2] = new Image()
+        stoplightArray[2].src = "Images/green.gif"
+
+        function cycle() {
+            if (curStoplight == 2)
+                curStoplight = 0
+            else
+                ++curStoplight
+            document.stoplight.src = stoplightArray[curStoplight].src
+        }
+
+        function startCycling() {
+            if (begin)
+                clearInterval(begin)
+            begin = setInterval("cycle()", 700)
+        }
+
+    </script>
+
+</body>
+
+</HTML>
