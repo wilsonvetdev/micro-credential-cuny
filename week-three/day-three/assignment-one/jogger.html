@@ -4,9 +4,9 @@
     <title>Jogger</title>
 </head>
 
-<body>
+<body style='text-align: center; padding: 20%;'>
 
-    <P><IMG SRC="Images/runner0.jpg" NAME="runner"></P>
+    <P><IMG SRC="Images/runner0.jpg" NAME="runner" id="runnerImg"></P>
     <form>
         <INPUT TYPE="button" NAME="turn" VALUE=" Turn " onClick="startTurning()">
         <INPUT TYPE="button" NAME="stop" VALUE=" Stop " onClick="clearInterval(begin)">
@@ -14,9 +14,10 @@
 
     <SCRIPT LANGUAGE="JavaScript">
 
-        let runnerArray = []
-        let curRunner = 0
+        let runnerArray = [] 
+        let curRunner = 0  
         let begin
+        let runnerImg = document.getElementById('runnerImg')
 
         runnerArray[0] = new Image()
         runnerArray[0].src = "Images/runner0.jpg"
@@ -35,13 +36,15 @@
             if (curRunner == 5)
                 curRunner = 0
             else
-                ++curRunner
-            document.runner.src = runnerArray[curRunner].src
+                ++curRunner 
+            runnerImg.src = runnerArray[curRunner].src 
         }
 
         function startTurning() {
-            if (begin)
-                clearInterval(begin);
+            if (begin) {
+                clearInterval(begin)
+            }
+                
             begin = setInterval("turn()", 400)
         }
 
