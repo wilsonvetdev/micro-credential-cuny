@@ -19,6 +19,9 @@
         let stoplightArray = []
         let curStoplight = 0
         let begin
+        let trafficLightImg = document.querySelector('img')
+        
+        trafficLightImg.addEventListener('load', () => startCycling())
 
         stoplightArray[0] = new Image()
         stoplightArray[0].src = "Images/red.gif"
@@ -32,7 +35,7 @@
                 curStoplight = 0
             else
                 ++curStoplight
-            document.stoplight.src = stoplightArray[curStoplight].src
+            trafficLightImg.src = stoplightArray[curStoplight].src
         }
 
         function startCycling() {
