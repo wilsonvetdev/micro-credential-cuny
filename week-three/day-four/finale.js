@@ -1,12 +1,18 @@
 let body = document.querySelector('body')
+
 let verticalButton = document.querySelector('button#vertical')
 let horizontalButton = document.querySelector('button#horizontal')
+let diagonalButton = document.querySelector('button#diagonal')
+
 let corgi = document.createElement('img')
 corgi.src = 'Images/corgi.jpg'
+
 let lab = document.createElement('img')
 lab.src = 'Images/lab.jpg'
+
 let terrier = document.createElement('img')
 terrier.src = 'Images/terrier.jpg'
+
 let position = 1
 let begin
 
@@ -17,8 +23,24 @@ verticalButton.addEventListener('click', () => {
     begin = setInterval('renderVerticalImgs()', 500)
 })
 
+horizontalButton.addEventListener('click', () => {
+    if(begin) {
+        clearInterval(begin)
+    }
+    begin = setInterval('renderHorizontalImgs()', 500)
+})
+
+diagonalButton.addEventListener('click', () => {
+    if(begin) {
+        clearInterval(begin)
+    }
+    begin = setInterval('renderDiagonalImgs()', 500)
+})
+
+
 const corgiTop = () => {
     corgi.style.position = 'absolute'
+    corgi.style.top = '0'
     corgi.style.left = '0'
     corgi.style.right = '0'
     corgi.style.margin = '0 auto auto auto'
@@ -90,4 +112,59 @@ const labRight = () => {
     lab.style.margin = 'auto 0 auto auto'
     lab.style.width = '320px'
     body.append(lab)
+}
+
+const renderHorizontalImgs = () => {
+    if(position === 1 ) {
+        labLeft()
+        position = 2
+    } else if (position === 2) {
+        labCenter()
+        position = 3
+    } else if (position === 3) {
+        labRight()
+        position = 1
+    }
+}
+
+const terrierBottomLeft = () => {
+    terrier.style.position = 'absolute'
+    terrier.style.left = '0'
+    terrier.style.bottom = '0'
+    terrier.style.margin = 'auto auto 0 0'
+    terrier.style.width = '320px'
+    body.append(terrier)
+}
+
+const terrierCenter = () => {
+    terrier.style.position = 'absolute'
+    terrier.style.left = '0'
+    terrier.style.right = '0'
+    terrier.style.top = '0'
+    terrier.style.bottom = '0'
+    terrier.style.margin = 'auto'
+    terrier.style.width = '320px'
+    body.append(terrier)
+}
+
+const terrierTopRight = () => {
+    terrier.style.position = 'absolute'
+    terrier.style.right = '0'
+    terrier.style.top = '0'
+    terrier.style.margin = '0 0 auto auto'
+    terrier.style.width = '320px'
+    body.append(terrier)
+}
+
+const renderDiagonalImgs = () => {
+    if(position === 1 ) {
+        terrierBottomLeft()
+        position = 2
+    } else if (position === 2) {
+        terrierCenter()
+        position = 3
+    } else if (position === 3) {
+        terrierTopRight()
+        position = 1
+    }
 }
