@@ -1,3 +1,5 @@
+# Python Version 3.9.x
+
 print("---Exercise One---")
 
 first_name = "Wilson"
