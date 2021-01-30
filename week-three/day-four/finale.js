@@ -11,6 +11,7 @@ verticalButton.addEventListener('click', () => {
 
     let corgi = document.createElement('img')
     corgi.src = 'Images/corgi.jpg'
+    corgi.style.width = '320px'
 
     const corgiTop = () => {
         corgi.style.position = 'absolute'
@@ -18,7 +19,6 @@ verticalButton.addEventListener('click', () => {
         corgi.style.left = '0'
         corgi.style.right = '0'
         corgi.style.margin = '0 auto auto auto'
-        corgi.style.width = '320px'
         body.append(corgi)
     }
 
@@ -29,7 +29,6 @@ verticalButton.addEventListener('click', () => {
         corgi.style.top = '0'
         corgi.style.bottom = '0'
         corgi.style.margin = 'auto'
-        corgi.style.width = '320px'
         body.append(corgi)
     }
 
@@ -40,7 +39,6 @@ verticalButton.addEventListener('click', () => {
         corgi.style.bottom = '0'
         corgi.style.margin = 'auto'
         corgi.style.marginBottom = '0'
-        corgi.style.width = '320px'
         body.append(corgi)
     }
 
@@ -64,7 +62,7 @@ verticalButton.addEventListener('click', () => {
         }
         position = 1
     } else {
-        begin = setInterval(renderVerticalImgs, 500)
+        begin = setInterval(renderVerticalImgs, 800)
     }
 
 })
@@ -73,6 +71,7 @@ horizontalButton.addEventListener('click', () => {
 
     let lab = document.createElement('img')
     lab.src = 'Images/lab.jpg'
+    lab.style.width = '320px'
 
     const labLeft = () => {
         lab.style.position = 'absolute'
@@ -80,7 +79,6 @@ horizontalButton.addEventListener('click', () => {
         lab.style.top = '0'
         lab.style.bottom = '0'
         lab.style.margin = 'auto auto auto 0'
-        lab.style.width = '320px'
         body.append(lab)
     }
 
@@ -91,7 +89,6 @@ horizontalButton.addEventListener('click', () => {
         lab.style.top = '0'
         lab.style.bottom = '0'
         lab.style.margin = 'auto'
-        lab.style.width = '320px'
         body.append(lab)
     }
 
@@ -101,7 +98,6 @@ horizontalButton.addEventListener('click', () => {
         lab.style.top = '0'
         lab.style.bottom = '0'
         lab.style.margin = 'auto 0 auto auto'
-        lab.style.width = '320px'
         body.append(lab)
     }
 
@@ -125,7 +121,7 @@ horizontalButton.addEventListener('click', () => {
         }
         position = 1
     } else {
-        begin = setInterval(renderHorizontalImgs, 500)
+        begin = setInterval(renderHorizontalImgs, 800)
     }
 
 })
@@ -134,13 +130,13 @@ diagonalButton.addEventListener('click', () => {
 
     let terrier = document.createElement('img')
     terrier.src = 'Images/terrier.jpg'
+    terrier.style.width = '320px'
 
     const terrierBottomLeft = () => {
         terrier.style.position = 'absolute'
         terrier.style.left = '0'
         terrier.style.bottom = '0'
         terrier.style.margin = 'auto auto 0 0'
-        terrier.style.width = '320px'
         body.append(terrier)
     }
 
@@ -151,7 +147,6 @@ diagonalButton.addEventListener('click', () => {
         terrier.style.top = '0'
         terrier.style.bottom = '0'
         terrier.style.margin = 'auto'
-        terrier.style.width = '320px'
         body.append(terrier)
     }
 
@@ -160,7 +155,6 @@ diagonalButton.addEventListener('click', () => {
         terrier.style.right = '0'
         terrier.style.top = '0'
         terrier.style.margin = '0 0 auto auto'
-        terrier.style.width = '320px'
         body.append(terrier)
     }
 
@@ -184,7 +178,7 @@ diagonalButton.addEventListener('click', () => {
         } 
         position = 1
     } else {
-        begin = setInterval(renderDiagonalImgs, 500)
+        begin = setInterval(renderDiagonalImgs, 800)
     }
 
 })
